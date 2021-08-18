@@ -4,12 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run"
+    "test": "cypress run",
+    "clean:reports": "mkdir -p cypress/reports && rm -R -f cypress/reports/* && mkdir cypress/reports/mochareports",
+    "premtest": "npm run clean:reports",
+    "scripts": "cypress run --config-file ./mCypress.json ",
+    "combine-reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mochareports/report.json",
+    "generate-report": "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
+    "posttest": "npm run combine-reports && npm run generate-report",
+    "mtest": "npm run scripts || npm run posttest"
   },
   "keywords": [],
   "author": "QA BOX LET'S TEST<qaboxletstest@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "cypress": "^8.3.0"
+    "cypress": "^8.3.0",
+    "cypress-multi-reporters": "^1.4.0",
+    "mocha": "^8.3.0",
+    "mochawesome": "^6.2.2",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.2.0"
   }
 }
