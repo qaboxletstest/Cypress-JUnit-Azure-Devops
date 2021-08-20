@@ -3,5 +3,5 @@
     "reporterOptions": {
         "mochaFile": "results/output.xml"
     },
-    "video": false,
+    "video": false
 }
