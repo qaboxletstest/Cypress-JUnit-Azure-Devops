@@ -6,10 +6,10 @@
   "scripts": {
     "test": "cypress run",
     "posttest": "jrm ./results/combined-report.xml \"./results/results-*.xml\"",
-    "script": "npm test || npm posttest",
+    "script-electron": "npm test || npm posttest",
     "chrome-test": "cypress run --browser chrome --headless",
     "postchrome-test": "jrm ./results/combined-report.xml \"./results/results-*.xml\"",
-    "chrome-script": "npm run chrome-test || npm run postchrome-test",
+    "script-chrome": "npm run chrome-test || npm run postchrome-test",
     "firefox-test": "cypress run --browser firefox --headless",
     "postfirefox-test": "jrm ./results/combined-report.xml \"./results/results-*.xml\"",
     "script-firefox": "npm run firefox-test || npm run postfirefox-test"
