@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run"
+    "test": "cypress run",
+    "chrome-test": "cypress run --browser chrome --headless",
+    "firefox-test": "cypress run --browser chrome --headless"
   },
   "keywords": [],
   "author": "QA BOX LET'S TEST<qaboxletstest@gmail.com>",
