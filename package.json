@@ -5,13 +5,22 @@
   "main": "index.js",
   "scripts": {
     "test": "cypress run",
+    "posttest": "jrm ./results/combined-report.xml \"./results/results-*.xml\"",
+    "script": "npm test || npm posttest",
     "chrome-test": "cypress run --browser chrome --headless",
-    "firefox-test": "cypress run --browser firefox --headless"
+    "postchrome-test": "jrm ./results/combined-report.xml \"./results/results-*.xml\"",
+    "chrome-script": "npm run chrome-test || npm run postchrome-test",
+    "firefox-test": "cypress run --browser firefox --headless",
+    "postfirefox-test": "jrm ./results/combined-report.xml \"./results/results-*.xml\"",
+    "script-firefox": "npm run firefox-test || npm run postfirefox-test"
   },
   "keywords": [],
   "author": "QA BOX LET'S TEST<qaboxletstest@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "cypress": "^8.3.0"
+  },
+  "devDependencies": {
+    "junit-report-merger": "^3.0.1"
   }
 }
