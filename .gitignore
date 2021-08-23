@@ -1,3 +1,4 @@
 node_modules
 results
 cypress/reports
+cypress/screenshots

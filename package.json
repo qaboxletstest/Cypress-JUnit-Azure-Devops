@@ -4,14 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run",
-    "clean:reports": "mkdir -p cypress/reports && rm -R -f cypress/reports/* && mkdir cypress/reports/mochareports",
-    "premtest": "npm run clean:reports",
-    "scripts": "cypress run --config-file ./mCypress.json ",
-    "combine-reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mochareports/report.json",
-    "generate-report": "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
-    "postmtest": "npm run combine-reports && npm run generate-report",
-    "mtest": "npm run scripts || npm run postmtest"
+    "test": "cypress run"
   },
   "keywords": [],
   "author": "QA BOX LET'S TEST<qaboxletstest@gmail.com>",
