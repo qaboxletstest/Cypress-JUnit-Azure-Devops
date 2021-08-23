@@ -6,8 +6,7 @@
   "scripts": {
     "test": "cypress run",
     "chrome-test": "cypress run --browser chrome --headless",
-    "firefox-test": "cypress run --browser firefox --headless",
-    "all-test": "npm test || npm run chrome-test || npm run firefox-test"
+    "firefox-test": "cypress run --browser firefox --headless"
   },
   "keywords": [],
   "author": "QA BOX LET'S TEST<qaboxletstest@gmail.com>",
